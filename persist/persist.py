@@ -10,7 +10,16 @@ for sport in sports:
 
     for player in players:
         if not names_exist(player): continue 
-        payload = {'id': player['id'], 'name_brief': get_name_brief(), 'first_name': player['firstname'], 'last_name': player['lastname'], 'position':player['position'], 'age': player['age']}
+        
+        payload = {
+            'id': player['id'],
+            'name_brief':   get_name_brief(),
+            'first_name':   player['firstname'],
+            'last_name':    player['lastname'],
+            'position':     player['position'],
+            'age':          player['age']
+        }
+        
 
 #name_brief doesn't work without first and last name.
 def names_exist(player):
