@@ -15,7 +15,7 @@ for sport in sports:
     for player in players:
         if not utils.vars_exist(player): continue 
 
-        payload = {
+        player_info = {
             'id': player['id'],
             'name_brief':   utils.get_name_brief(sport,player),
             'first_name':   player['firstname'],
@@ -23,10 +23,5 @@ for sport in sports:
             'position':     player['position'],
             'age':          player['age']
         }
-        
-        #check for duplicate data
-        player_info = collection.find(payload)
 
-        if player_info.count() == 0: 
-            collection.insert(payload)        
-    
+        utils.insert(collection, player_info)
