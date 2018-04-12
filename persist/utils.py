@@ -16,9 +16,9 @@ def get_name_brief(sport, player):
 
 #check for duplicate data inside the databases collection and only insert if its not there
 def insert(collection, data):
-        identifier = data.keys[0]
-        info = collection.find(identifier) #found unique object
+    identifier = data.keys[0]
+    info = collection.find(identifier) #found unique object
 
-        if info.count() == 0: 
-            collection.insert(data)        
+    if info.count() == 0: 
+        collection.insert(data)        
     
