@@ -16,7 +16,6 @@ for sport in sports:
         if not utils.vars_exist(player): continue 
 
         player_info = {
-            'id': player['id'],
             'name_brief':   utils.get_name_brief(sport,player),
             'first_name':   player['firstname'],
             'last_name':    player['lastname'],
