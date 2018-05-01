@@ -20,7 +20,8 @@ for sport in sports:
             'first_name':   player['firstname'],
             'last_name':    player['lastname'],
             'position':     player['position'],
-            'age':          player['age']
+            'age':          player['age'],
+            'id':           player['id']
         }
 
         initial_position_info = {
@@ -32,10 +33,10 @@ for sport in sports:
             }
         }
 
-        utils.insert(collection, player_info, player_info) #insert player
+        utils.insert(collection, player_info, player_info) #insert player if they don't already exist
 
         pos_query = {'position_info.position': player['position']}
-        pos_inserted = utils.insert(collection, initial_position_info, pos_query) #insert position info object
+        pos_inserted = utils.insert(collection, initial_position_info, pos_query) #try inserting position info object
 
         if not pos_inserted: # position info object already exists in DB
             utils.update_position(collection, pos_query, player)

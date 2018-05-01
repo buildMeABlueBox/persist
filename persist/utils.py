@@ -1,6 +1,10 @@
+import pprint
+
+pp = pprint.PrettyPrinter()
+
 #validation that variables are defined
 def vars_exist(player):
-    attributes = ['age', 'firstname', 'lastname', 'position']
+    attributes = ['age', 'firstname', 'id', 'lastname', 'position']
     for attr in attributes:
         if attr not in player: return False
         if not player[attr]: return False     
