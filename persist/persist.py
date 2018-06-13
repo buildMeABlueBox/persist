@@ -1,8 +1,8 @@
 from pymongo import MongoClient
 import requests, utils
 
-primary_password = ""
-uri = f"mongodb://akamat-mongo:{primary_password}@akamat-mongo.documents.azure.com:10255/?ssl=true&replicaSet=globaldb"
+primary_password = ''
+uri = f'mongodb://akamat-mongo:{primary_password}@akamat-mongo.documents.azure.com:10255/?ssl=true&replicaSet=globaldb'
 client = MongoClient(uri) 
 
 db = client['sports']
